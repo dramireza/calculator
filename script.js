@@ -19,7 +19,7 @@ let varop = '';
 let vartotal = 0;
 
 function operate() {
-    var2 = Number(total.textContent);
+    var2 = Number(total.value);
 
     if (varop == '+') vartotal = add(var1, var2);
     if (varop == '-') vartotal = substract(var1, var2);
@@ -27,7 +27,7 @@ function operate() {
     if (varop == '/') vartotal = divide(var1, var2);
 
 
-    let prev = subtotal.textContent;
+    let prev = subtotal.value;
     printToDisplay('subtotal', prev + var2)
     printToDisplay('total', vartotal)
     var1 = vartotal;
@@ -35,9 +35,8 @@ function operate() {
     var2 = 0;
 }
 
-
 function number(a) {
-    let prev = total.textContent;
+    let prev = total.value;
     printToDisplay('total', `${prev}${a}`);
 }
 
@@ -46,7 +45,7 @@ function cls() {
 }
 
 function operator(op) {
-    var1 = Number(total.textContent);
+    var1 = Number(total.value);
     varop = op;
     printToDisplay('subtotal', `${var1}${op}`)
     cls();
@@ -54,5 +53,5 @@ function operator(op) {
 
 function printToDisplay(display, toPrint) {
     const tmp = document.querySelector('.' + display);
-    tmp.textContent = toPrint
+    tmp.value = toPrint
 }
