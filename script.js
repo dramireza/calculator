@@ -13,26 +13,28 @@ function divide(a, b) {
 
 const total = document.querySelector('.total');
 const subtotal = document.querySelector('.subtotal');
-let var1 = 0;
-let var2 = 0;
+let var1 = '';
+let var2 = '';
 let varop = '';
-let vartotal = 0;
 
 function operate() {
-    var2 = Number(total.value);
+    if (varop != '' & var1 != '' & total.value != '') {
 
-    if (varop == '+') vartotal = add(var1, var2);
-    if (varop == '-') vartotal = substract(var1, var2);
-    if (varop == '*') vartotal = multiply(var1, var2);
-    if (varop == '/') vartotal = divide(var1, var2);
+        let vartotal = '';
+        var2 = Number(total.value);
 
+        if (varop == '+') vartotal = add(var1, var2);
+        if (varop == '-') vartotal = substract(var1, var2);
+        if (varop == '*') vartotal = multiply(var1, var2);
+        if (varop == '/') vartotal = divide(var1, var2);
 
-    let prev = subtotal.value;
-    printToDisplay('subtotal', prev + var2)
-    printToDisplay('total', vartotal)
-    var1 = vartotal;
-    varop = '';
-    var2 = 0;
+        let prev = subtotal.value;
+        printToDisplay('subtotal', prev + var2)
+        printToDisplay('total', vartotal)
+        var1 = vartotal;
+        varop = '';
+        var2 = '';
+    }
 }
 
 function number(a) {
@@ -40,18 +42,33 @@ function number(a) {
     printToDisplay('total', `${prev}${a}`);
 }
 
+function period() {
+    let prev = total.value;
+    if (!(prev.includes('.'))) {
+        printToDisplay('total', `${prev}.`);
+    }
+}
+
+
 function cls() {
     printToDisplay('total', '');
+    printToDisplay('subtotal', '');
+    var1 = '';
+    varop = '';
+    var2 = '';
 }
 
 function operator(op) {
-    var1 = Number(total.value);
+    if (varop != '' & var1 != '' & total.value != '') operate();
+    if (varop == '') {
+        var1 = Number(total.value);
+    }
     varop = op;
     printToDisplay('subtotal', `${var1}${op}`)
-    cls();
+    printToDisplay('total', '');
 }
 
 function printToDisplay(display, toPrint) {
     const tmp = document.querySelector('.' + display);
     tmp.value = toPrint
-}
+} 
