@@ -49,6 +49,11 @@ function period() {
     }
 }
 
+function backspace(){
+    let prev = total.value;
+    printToDisplay('total',prev.slice(0,-1))
+}
+
 
 function cls() {
     printToDisplay('total', '');
