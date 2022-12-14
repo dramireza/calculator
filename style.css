@@ -5,6 +5,8 @@ body {
     justify-content: center;
     gap: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #16213E;
+    color:white;
 }
 
 header {
@@ -13,20 +15,36 @@ header {
 
 input {
     text-align: end;
+    border: none;
+    width: 200px;
+    background: #16213E;
+    color: white;
 }
 
 button {
     width: 50px;
-    height: 50px;
+    min-height: 50px;
     border: none;
+    background: #0F3460;
+    color: white;
+    border-radius: 15px;
+}
+
+button:hover{
+    background: #0053ba;
+    transition: 0.2s;
+}
+button:active{
+    transform: scale(0.9);
+    transition: 0.1s;
 }
 
 .operator {
-    background-color: lightsteelblue;
+    font-size: 12px;
 }
 
-.number{
-    background-color: white;
+.number {
+    background: #533483;
     font-weight: bold;
     font-size: 18px;
 }
@@ -37,4 +55,23 @@ button {
     grid-template-rows: auto;
     gap: 1px;
     width: fit-content;
+}
+
+.total {
+    font-size: 30px;
+    height: 30px;
+}
+
+.subtotal {
+    color: darkgray;
+    font-size: 12px;
+}
+
+.double {
+    grid-row-start: span 2;
+}
+
+.equal {
+    background: #E94560;
+
 }

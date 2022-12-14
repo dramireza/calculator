@@ -18,7 +18,7 @@ let var2 = '';
 let varop = '';
 
 function operate() {
-    if (varop != '' & var1 != '' & total.value != '') {
+    if (varop !== '' & var1 !== '' & total.value !== '') {
 
         let vartotal = '';
         var2 = Number(total.value);
@@ -49,11 +49,10 @@ function period() {
     }
 }
 
-function backspace(){
+function backspace() {
     let prev = total.value;
-    printToDisplay('total',prev.slice(0,-1))
+    printToDisplay('total', prev.slice(0, -1))
 }
-
 
 function cls() {
     printToDisplay('total', '');
@@ -64,8 +63,8 @@ function cls() {
 }
 
 function operator(op) {
-    if (varop != '' & var1 != '' & total.value != '') operate();
-    if (varop == '') {
+    if (varop !== '' & var1 !== '' & total.value !== '') operate();
+    if (varop === '') {
         var1 = Number(total.value);
     }
     varop = op;

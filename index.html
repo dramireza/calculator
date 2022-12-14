@@ -9,29 +9,35 @@
     <script rel="script" src="script.js" defer></script>
 </head>
 <body>
-    <div class="header">Header</div>
+    <div class="header">Amazing Calculator :D</div>
     <input type="text" readonly class="subtotal">
     <input type="text" readonly class="total">
     <div class="calc container">
         <button class="operator" onclick="operator('+')">+</button>
         <button class="operator" onclick="operator('-')">-</button>
         <button class="operator" onclick="operator('/')">/</button>
-        <button class="operator" onclick="operator('*')">*</button>
+        <button class="operator" onclick="operator('*')">X</button>
         
         <button class="number" onclick="number(7)">7</button>
         <button class="number" onclick="number(8)">8</button>
         <button class="number" onclick="number(9)">9</button>
-        <button onclick="operate()">=</button>
+
+        <button class="double" onclick="backspace()"><=</button>
+
         <button class="number" onclick="number(4)">4</button>
         <button class="number" onclick="number(5)">5</button>
         <button class="number" onclick="number(6)">6</button>
-        <button onclick="backspace()"><=</button>
+
+
         <button class="number" onclick="number(1)">1</button>
         <button class="number" onclick="number(2)">2</button>
         <button class="number" onclick="number(3)">3</button>
         
+        <button class="double equal" onclick="operate()">=</button>
         <button onclick="cls()">C</button>
+        
         <button class="number" onclick="number(0)">0</button>
+
         <button class="period"onclick="period('.')">.</button>
         
     </div>
